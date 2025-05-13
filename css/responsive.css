@@ -1,0 +1,522 @@
+/* Responsive Styles for VHASS Cybersecurity */
+/* General Responsive Rules */
+@media (max-width: 1300px) {
+    /* Header/Navigation Adjustments */
+    .heat {
+        padding: 0 30px;
+    }
+    
+    .navbar {
+        gap: 15px;
+    }
+    
+    /* About Page */
+    .about-section {
+        gap: 30px;
+    }
+    
+    .stats-cards {
+        gap: 20px;
+    }
+    
+    /* Courses Page */
+    .course-grid {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+    
+    /* Entrepreneur Page */
+    .program-highlights {
+        gap: 20px;
+    }
+    
+    /* Contact Page */
+    .helpdesk-container {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 756px) {
+    /* Global Adjustments */
+    .container, .contain {
+        padding: 0 15px;
+    }
+    
+    /* Header/Navigation */
+    .heat {
+        flex-direction: column;
+        padding: 15px;
+    }
+    
+    .navbar {
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 15px;
+    }
+    
+    .navbar a {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+    }
+
+    .robot-3d{
+        scale: 0.5;
+        top: -25%;
+        right: 0;
+    }    
+    
+    /* Home Page */
+    .banner .content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .banner .image {
+        margin-top: 30px;
+    }
+    
+    .grid-2 {
+        grid-template-columns: 1fr;
+    }
+    
+    /* About Page */
+    .page-header {
+        padding: 60px 0;
+    }
+    
+    .page-header h1 {
+        font-size: 2rem;
+    }
+    
+    .about-section {
+        flex-direction: column;
+    }
+    
+    .stats-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .timeline::before {
+        left: 30px;
+    }
+    
+    .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 0;
+    }
+    
+    .timeline-item:nth-child(odd),
+    .timeline-item:nth-child(even) {
+        left: 0;
+        text-align: left;
+    }
+    
+    .team-grid, .values-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Courses Page */
+    .section-header h2 {
+        font-size: 2rem;
+    }
+    
+    .course-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .course-price {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .action-buttons {
+        width: 100%;
+        display: flex;
+        gap: 10px;
+    }
+    
+    /* Contact Page */
+    .helpdesk-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-form, .support-info {
+        grid-column: span 1;
+    }
+    
+    /* Entrepreneur Page */
+    .entrepreneur-hero h1 {
+        font-size: 2.2rem;
+    }
+    
+    .highlight-card {
+        width: 100%;
+        max-width: 350px;
+    }
+    
+    .timeline::before {
+        left: 30px;
+    }
+    
+    .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+    }
+    
+    .timeline-item:nth-child(even) {
+        left: 0;
+    }
+    
+    /* Testimonials */
+    .testimonial-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .video-wrapper {
+        height: 200px;
+    }
+    
+    /* Footer */
+    .footer-links-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .footer-main {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .footer-brand {
+        text-align: center;
+    }
+    
+    .footer-newsletter {
+        margin: 20px auto;
+    }
+}
+
+/* Additional Mobile Optimizations */
+@media (max-width: 480px) {
+    /* Index Page */
+    .content h1 {
+        font-size: 2.5rem;
+        line-height: 1.2;
+    }
+    
+    .robot-3d {
+        display: none; /* Hide 3D element on smallest screens */
+    }
+    
+    /* Navigation */
+    .navbar {
+        gap: 8px;
+    }
+    
+    .navbar a {
+        padding: 6px 8px;
+        font-size: 0.8rem;
+    }
+
+    .robot-3d{
+        scale: 0.5;
+        top: -25%;
+        right: 0;
+    }    
+    
+    /* Buttons */
+    .btn-primary, .btn-outline, .course-btn {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+    
+    /* Testimonials */
+    .testimonial-card {
+        padding: 15px;
+    }
+    
+    .video-wrapper {
+        height: 180px;
+    }
+}
+
+/* Tablet Landscape Optimization */
+@media (min-width: 757px) and (max-width: 1024px) {
+    /* Courses Grid */
+    .course-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+    
+    /* About Page */
+    .stats-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* Entrepreneur Highlights */
+    .program-highlights {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Print Styles */
+@media print {
+    .navbar, .footer, .heat {
+        display: none;
+    }
+    
+    body {
+        padding: 20px;
+        font-size: 12pt;
+        color: #000;
+    }
+    
+    a::after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+        font-weight: normal;
+    }
+}
+
+/* Course Detail Pages Responsive Styles */
+@media (max-width: 1300px) {
+    /* General adjustments */
+    .course-container {
+        padding: 0 40px;
+    }
+    
+    .course-hero {
+        padding: 80px 20px;
+    }
+    
+    .course-hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    /* Highlight cards adjustment */
+    .highlight-card {
+        flex: 1 1 250px;
+    }
+    
+    /* Module titles */
+    .module-title {
+        padding: 12px 15px;
+        font-size: 1rem;
+    }
+    
+    /* FAQ items */
+    .faq-question {
+        padding: 12px 15px;
+    }
+}
+
+@media (max-width: 756px) {
+    /* Mobile-first adjustments */
+    .container, .course-container {
+        padding: 0 20px;
+    }
+    
+    /* Hero section */
+    .course-hero {
+        padding: 60px 15px;
+    }
+    
+    .course-hero h1 {
+        font-size: 2rem;
+        line-height: 1.3;
+    }
+    
+    .course-hero p {
+        font-size: 1rem;
+    }
+    
+    /* Course cards */
+    .course-card {
+        padding: 20px;
+    }
+    
+    /* Highlight cards stack on mobile */
+    .course-highlights {
+        flex-direction: column;
+    }
+    
+    .highlight-card {
+        flex: 1 1 auto;
+        margin-bottom: 15px;
+    }
+    
+    /* Module/syllabus section */
+    .module-title {
+        font-size: 0.9rem;
+        padding: 10px 12px;
+    }
+    
+    .module-content {
+        padding: 12px;
+    }
+    
+    .module-content li {
+        margin-bottom: 8px;
+        font-size: 0.9rem;
+    }
+    
+    /* FAQ section */
+    .faq-question {
+        font-size: 0.9rem;
+        padding: 10px 12px;
+    }
+    
+    .faq-answer {
+        padding: 12px;
+        font-size: 0.9rem;
+    }
+    
+    /* Testimonials */
+    .testimonial {
+        padding: 15px;
+    }
+    
+    .testimonial p {
+        font-size: 0.9rem;
+    }
+    
+    /* Enroll button */
+    .enroll-btn {
+        padding: 12px 25px;
+        font-size: 1rem;
+        width: 100%;
+    }
+    
+    .enroll-section h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Additional Mobile Optimizations */
+@media (max-width: 480px) {
+    .course-hero {
+        padding: 50px 10px;
+    }
+    
+    .course-hero h1 {
+        font-size: 1.8rem;
+    }
+    
+    .course-card h2 {
+        font-size: 1.5rem;
+    }
+    
+    .module-title {
+        font-size: 0.85rem;
+    }
+    
+    .testimonial-section h2 {
+        font-size: 1.5rem;
+    }
+    
+    .faq-section h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Workshop Page Specific Responsive Styles */
+@media (max-width: 1300px) {
+    .workshop-grid {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+    
+    .event-item {
+        flex-direction: column;
+    }
+    
+    .event-date {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+}
+
+@media (max-width: 756px) {
+    /* Workshop grid becomes single column */
+    .workshop-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Workshop cards */
+    .workshop-card {
+        flex-direction: column;
+    }
+    
+    .workshop-image {
+        width: 100%;
+        height: 200px;
+    }
+    
+    .workshop-content {
+        width: 100%;
+        padding: 20px;
+    }
+    
+    /* Benefits grid */
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Events timeline */
+    .events-timeline {
+        padding-left: 0;
+    }
+    
+    .event-item {
+        padding-left: 0;
+        border-left: none;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+        border-bottom: 1px solid #eee;
+    }
+    
+    .event-date {
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+        margin-bottom: 10px;
+    }
+}
+
+/* Print Styles for Course Pages */
+@media print {
+    .heat, .footer, .enroll-section {
+        display: none;
+    }
+    
+    .course-container {
+        padding: 0;
+    }
+    
+    .course-hero {
+        background: none !important;
+        color: #000;
+        padding: 0;
+        text-align: left;
+    }
+    
+    .course-card {
+        box-shadow: none;
+        border: 1px solid #ddd;
+        page-break-inside: avoid;
+    }
+    
+    .module-title {
+        background: #fff !important;
+        color: #000 !important;
+        border: 1px solid #000;
+    }
+    
+    .module-content {
+        display: block !important;
+    }
+    
+    a::after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+    }
+}
