@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Signup Page</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      animation: gradientBG 15s ease infinite;
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .container {
+      background: white;
+      padding: 40px 30px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      width: 100%;
+      max-width: 420px;
+      text-align: center;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    input, button {
+      width: 100%;
+      margin-top: 12px;
+      padding: 12px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      transition: 0.3s ease;
+    }
+
+    input:focus {
+      outline: none;
+      border-color: #007bff;
+      box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+    }
+
+    button {
+      background-color: #28a745;
+      color: white;
+      font-weight: bold;
+      border: none;
+    }
+
+    button:hover {
+      background-color: #218838;
+    }
+
+    .location-info {
+      font-size: 14px;
+      color: #555;
+      margin-top: 8px;
+      text-align: left;
+    }
+
+    .choice-btn {
+      margin-top: 15px;
+      background-color: #007bff;
+      transition: 0.3s ease;
+    }
+
+    .choice-btn:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="container" id="main-container">
+    <h2>Signup</h2>
+    <input type="text" id="name" placeholder="Full Name" required />
+    <input type="text" id="pincode" placeholder="Pincode (6 digits)" maxlength="6" />
+    <div class="location-info" id="location"></div>
+    <input type="tel" id="mobile" placeholder="+91 Mobile Number" maxlength="10" />
+    <button onclick="submitForm()">Sign Up</button>
+  </div>
+
+  <script>
+    document.getElementById("pincode").addEventListener("input", function () {
+      const pin = this.value;
+      if (pin.length === 6) {
+        fetch(`https://api.postalpincode.in/pincode/${pin}`)
+          .then(response => response.json())
+          .then(data => {
+            const loc = document.getElementById("location");
+            if (data[0].Status === "Success" && data[0].PostOffice.length > 0) {
+              const postOffice = data[0].PostOffice[0];
+              loc.textContent = `${postOffice.Name}, ${postOffice.District}, ${postOffice.State}`;
+            } else {
+              loc.textContent = "Invalid pincode.";
+            }
+          })
+          .catch(() => {
+            document.getElementById("location").textContent = "Error fetching location.";
+          });
+      } else {
+        document.getElementById("location").textContent = "";
+      }
+    });
+
+    function submitForm() {
+      const name = document.getElementById("name").value.trim();
+      const mobile = document.getElementById("mobile").value.trim();
+      const pincode = document.getElementById("pincode").value.trim();
+      const location = document.getElementById("location").textContent;
+
+      if (!name || !/^\d{10}$/.test(mobile) || location === "" || location === "Invalid pincode.") {
+        alert("Please fill out all fields with valid data.");
+        return;
+      }
+
+      document.getElementById("main-container").innerHTML = `
+        <h2>Welcome, ${name}!</h2>
+        <p>Your Area: ${location}</p>
+        <p>Please select your role:</p>
+        <button class="choice-btn" onclick="alert('Thank you for choosing to donate!')">I'm a Food Donor</button>
+        <button class="choice-btn" onclick="alert('Welcome, food consumer!')">I'm a Food Consumer</button>
+      `;
+    }
+  </script>
+</body>
+</html>

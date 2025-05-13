@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacts Vhass CyberSecurity</title>
+    <link rel="stylesheet" href="css/style(1).css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        /* Updated Contacts Page Styles to Match Main Theme */
+        
+        .helpdesk-content {
+            padding: 80px 0;
+            background-color: #f5f7fa; /* Light background to match courses section */
+            border-radius: 0; /* Remove rounded corners for full-width look */
+            margin-top: 0;
+            backdrop-filter: none; /* Remove blur effect */
+        }
+    
+        .helpdesk-container {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns side by side */
+    align-items: start;
+}
+    
+        .help-card, .info-card {
+            background: #fff; /* White cards to match course cards */
+            padding: 30px;
+            border-radius: 10px; /* Slightly less rounded than before */
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08); /* Softer shadow to match courses */
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid #e9ecef; /* Subtle border */
+        }
+    
+        .help-card:hover, .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15); /* More pronounced hover effect */
+        }
+    
+        .help-card i, .info-card i {
+            font-size: 2.5rem;
+            color: #2b8a3e; /* Green to match primary color */
+            margin-bottom: 15px;
+        }
+    
+        .btn-secondary, .btn-primary {
+            background: #2b8a3e; /* Green primary button */
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px; /* Less rounded than before */
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+    
+        .btn-secondary:hover, .btn-primary:hover {
+            background: #1e6130; /* Darker green on hover */
+            transform: translateY(-2px);
+        }
+    
+        .contact-form {
+    background: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    grid-column: 1 / 2; /* Left column */
+}
+    
+        .contact-form h2 {
+            margin-bottom: 20px;
+            font-size: 28px;
+            color: #212529; /* Dark text */
+        }
+    
+        .form-group {
+            margin-bottom: 20px;
+        }
+    
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #495057;
+            font-weight: 500;
+        }
+    
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border-radius: 4px;
+            border: 1px solid #ced4da;
+            background: #fff;
+            color: #495057;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+    
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: #2b8a3e;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(43, 138, 62, 0.1);
+        }
+    
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: #6c757d;
+        }
+    
+        .support-info {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    grid-column: 2 / 3; /* Right column */
+}
+    
+        .info-card h3 {
+            margin-bottom: 12px;
+            font-size: 20px;
+            color: #212529;
+        }
+    
+        .info-card p {
+            font-size: 15px;
+            color: #6c757d;
+            line-height: 1.5;
+        }
+    
+        .info-card p strong {
+            color: #212529;
+        }
+    
+        /* Section header to match courses page */
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+            grid-column: span 2;
+        }
+        
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: #212529;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 3px;
+            background: #2b8a3e;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .section-header p {
+            color: #6c757d;
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+    
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .contact-form, .support-info {
+                grid-column: span 1;
+            }
+            
+            .section-header h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="heat">
+            <a href="index.html" class="any">
+                <h1 class="logo"><img src="images/vhass-logo.png" alt="VHASS Cybersecurity" class="header-logo">VHASS</h1>
+        </a>
+            <nav class="navbar">
+                <a href="home.html">Home</a>
+                <a href="courses.html">Courses</a>
+              <a href="workshop.html">WorkShop</a>
+                <a href="entre.html">Entrepreneur</a>
+                <a href="about.html">About Us</a>
+                <a href="contacts.html">Contacts</a>
+            </nav>
+            
+            <div id="userArea" class="user-options"></div>  
+        </div>
+        
+    
+<!-- Helpdesk Content -->
+<section class="helpdesk-content">
+    <div class="container">
+        <div class="helpdesk-container">
+            <div class="section-header">
+                <h2>Contact Our Cybersecurity Team</h2>
+                <p>Have questions or need support? Reach out to our experts through any of these channels</p>
+            </div>
+            
+            <div class="help-options">
+                <div class="help-card">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Contact Us</h3>
+                    <p>Send us a message and we'll respond quickly</p>
+                    <a href="#contact-form" class="btn-secondary">Contact Form</a>
+                </div>
+                <div class="help-card">
+                    <i class="fas fa-phone-alt"></i>
+                    <h3>Live Support</h3>
+                    <p>Talk to our support team in real-time</p>
+                    <a href="#" class="btn-secondary">Start Chat</a>               
+                 </div>
+            </div>
+            
+            <div class="contact-form" id="contact-form">
+                <h2>Send Us a Message</h2>
+                <form id="helpdeskForm">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <select id="subject" name="subject" required>
+                            <option value="">Select a subject</option>
+                            <option value="course">Course Inquiry</option>
+                            <option value="technical">Technical Issue</option>
+                            <option value="billing">Billing Question</option>
+                            <option value="feedback">Feedback/Suggestion</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="attachment">Attach File (Optional)</label>
+                        <input type="file" id="attachment" name="attachment">
+                    </div>
+                    <button type="submit" class="btn-primary">Send Message</button>
+                </form>
+            </div>
+            
+            <div class="support-info">
+                <div class="info-card">
+                    <h3>Support Hours</h3>
+                    <p><strong>Monday-Friday:</strong> 8:00 AM - 8:00 PM (EST)</p>
+                    <p><strong>Saturday-Sunday:</strong> 10:00 AM - 6:00 PM (EST)</p>
+                    <p>24/7 emergency support for critical issues</p>
+                </div>
+                <div class="info-card">
+                    <h3>Other Ways to Reach Us</h3>
+                    <p><strong>Email:</strong> info@vhass.in</p>
+                    <p><strong>Phone:</strong> +91 8985320226</p>
+                    <p><strong>Forums:</strong> community.vhass.com</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-main">
+                    <div class="footer-brand">
+                        <img src="images/vhass-logo.png" alt="VHASS Cybersecurity" class="footer-logo">
+                        <p class="footer-description">Empowering the digital world with cutting-edge cybersecurity education and solutions.</p>
+                        <div class="footer-newsletter">
+                            <h5>Subscribe to our newsletter</h5>
+                            <form class="newsletter-form">
+                                <input type="email" placeholder="Your email address" required>
+                                <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-links-container">
+                        <div class="footer-links-col">
+                            <h4 class="footer-title">Quick Links</h4>
+                            <ul class="footer-links">
+                                <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                                <li><a href="courses.html"><i class="fas fa-chevron-right"></i> Courses</a></li>
+                                <li><a href="workshop.html"><i class="fas fa-chevron-right"></i> WorkShop</a></li>
+                                <li><a href="contacts.html"><i class="fas fa-chevron-right"></i> Helpdesk</a></li>
+                                <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                                <li><a href="entre.html"><i class="fas fa-chevron-right"></i> Entrepreneur</a></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="footer-links-col">
+                            <h4 class="footer-title">Courses</h4>
+                            <ul class="footer-links">
+                                <li><a href="des1.html"><i class="fas fa-chevron-right"></i> Ethical Hacking</a></li>
+                                <li><a href="des2.html"><i class="fas fa-chevron-right"></i> Bug Hunting</a></li>
+                                <li><a href="des3.html"><i class="fas fa-chevron-right"></i> Awareness of Cyber Crime And Threats</a></li>
+                                <li><a href="des4.html"><i class="fas fa-chevron-right"></i> Cybersecurity for Teenagers</a></li>
+                                <li><a href="#"><i class="fas fa-chevron-right"></i> Entrepreneurship for Beginners</a></li>
+                                <li><a href="#"><i class="fas fa-chevron-right"></i> ScaleUp Mastery</a></li>
+
+                            </ul>
+                        </div>
+                        
+                        <div class="footer-links-col">
+                            <h4 class="footer-title">Contact Us</h4>
+                            <ul class="footer-contact">
+                                <li><i class="fas fa-map-marker-alt"></i> <span>#2-1-70, Brilliants School Area,<br>Ibrahimpatnam Krishna - 521 456,<br>Andhra Pradesh</span></li>
+                                <li><i class="fas fa-phone"></i> +91 8985320226</li>
+                                <li><i class="fas fa-envelope"></i> info@vhass.in</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-social">
+                    <h5>Follow Us</h5>
+                    <div class="social-links">
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com/company/vhass-softwares-private-limited/" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.instagram.com/vhass_official?igsh=YmxkOWp5b2V2bzVk&utm_source=qr" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-legal">
+                    <p>&copy; 2023  VHASS SOFTWARES PVT. LTD. All rights reserved.</p>
+                    <div class="legal-links">
+                        <a href="terms.html">Privacy Policy</a>
+                        <span>|</span>
+                        <a href="terms.html">Terms of Service</a>
+                        <span>|</span>
+                        <a href="terms.html">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+</body>
+</html>

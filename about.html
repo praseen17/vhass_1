@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About VHASS Cybersecurity</title>
+    <link rel="stylesheet" href="css/style(1).css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2b8a3e;
+            --primary-dark: #1e6130;
+            --secondary: #1a5276;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --gray: #6c757d;
+            --light-gray: #e9ecef;
+        }
+        
+        /* About Header */
+        .page-header {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 100px 0;
+            position: relative;
+        }
+        
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            animation: fadeInDown 1s ease;
+        }
+        
+        .page-header p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            animation: fadeInUp 1s ease;
+        }
+        
+        /* About Content */
+        .about-content {
+            padding: 80px 0;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--dark);
+            margin-bottom: 15px;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background: var(--primary);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        /* About Section */
+        .about-section {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            margin-bottom: 80px;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-text h2 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .about-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+        
+        .about-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.5s ease;
+        }
+        
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        /* Stats Cards */
+        .stats-cards {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin: 60px 0;
+        }
+        
+        .stat-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            font-size: 1.1rem;
+            color: var(--gray);
+        }
+        
+        /* Milestones */
+        .milestones {
+            margin: 80px 0;
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background: var(--light-gray);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+        }
+        
+        .timeline-item {
+            padding: 20px 0;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            left: 0;
+            padding-right: 50px;
+            text-align: right;
+        }
+        
+        .timeline-item:nth-child(even) {
+            left: 50%;
+            padding-left: 50px;
+            text-align: left;
+        }
+        
+        .timeline-date {
+            background: var(--primary);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+        
+        .timeline-content {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .timeline-content h3 {
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        /* Team Section */
+        .team-section {
+            margin: 80px 0;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .team-member {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            padding: 30px;
+            transition: transform 0.3s ease;
+        }
+        
+        .team-member:hover {
+            transform: translateY(-10px);
+        }
+        
+        .team-member img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--light-gray);
+            margin-bottom: 20px;
+        }
+        
+        .team-member h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+        
+        .position {
+            color: var(--primary);
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        
+        .bio {
+            color: var(--gray);
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: var(--light-gray);
+            color: var(--dark);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background: var(--primary);
+            color: white;
+        }
+        
+        /* Values Section */
+        .values-section {
+            margin: 80px 0;
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .value-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .value-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .value-card i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .value-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        .value-card p {
+            color: var(--gray);
+            line-height: 1.6;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+  padding: 60px 20px;
+  background: #101010;
+  color: #e0e0e0;
+}
+
+.section-title h2 {
+  text-align: center;
+  font-size: 2.5em;
+  color: #00ff99;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  justify-items: center;
+}
+
+.testimonial-card {
+  background: rgba(25, 25, 25, 0.9);
+  border: 1px solid #00ff99;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 255, 100, 0.2);
+  padding: 20px;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: scale(1.03);
+}
+
+.video-wrapper {
+  width: 100%;
+  aspect-ratio: 16/9;
+  margin-bottom: 15px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #00ffcc;
+}
+
+video {
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: #000;
+}
+
+.testimonial-author h4 {
+  margin: 10px 0 4px;
+  font-size: 1.1em;
+  color: #00ffff;
+}
+
+.testimonial-author p {
+  font-size: 0.9em;
+  color: #ccc;
+}
+
+
+        
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .about-section {
+                flex-direction: column;
+            }
+            
+            .stats-cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .timeline::before {
+                left: 30px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 0;
+                text-align: left;
+            }
+            
+            .timeline-item:nth-child(odd),
+            .timeline-item:nth-child(even) {
+                left: 0;
+                padding-right: 0;
+                padding-left: 70px;
+                text-align: left;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .stats-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="contain">
+        <div class="heat">
+            <a href="index.html" class="any">
+            <h1 class="logo"><img src="images/vhass-logo.png" alt="VHASS Cybersecurity" class="header-logo">VHASS</h1> 
+            
+        </a>
+            <nav class="navbar">
+                <a href="home.html">Home</a>
+                <a href="courses.html">Courses</a>
+               <a href="workshop.html">WorkShop</a>
+                <a href="entre.html">Entrepreneur</a>
+                <a href="about.html">About Us</a>
+                <a href="contacts.html">Contacts</a>
+            </nav>
+            
+            <div id="userArea" class="user-options"></div>  
+        </div>
+        
+    <!-- About Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>About Vhass Softwares Pvt. Ltd.</h1>
+            <p>Protecting digital frontiers through education and innovation</p>
+        </div>
+    </section>
+
+    <!-- About Content -->
+    <section class="about-content">
+        <div class="container">
+            <!-- Stats Cards -->
+            <div class="stats-cards">
+                <div class="stat-card">
+                    <div class="stat-number">20+</div>
+                    <div class="stat-label">Students Trained</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">5+</div>
+                    <div class="stat-label">Expert Instructors</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">6</div>
+                    <div class="stat-label">Courses Available</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">95%</div>
+                    <div class="stat-label">Satisfaction Rate</div>
+                </div>
+            </div>
+            
+            <!-- About Section -->
+            <div class="about-section">
+                <div class="about-text">
+                    <h2>Our Story</h2>
+                    <p>Founded in 2023, Vhass softwares Pvt. Ltd. began as a small team of security professionals passionate about bridging the cybersecurity skills gap. Today, we've grown into a leading provider of cybersecurity education, serving thousands of students and professionals worldwide.</p>
+                    <p>Our mission is to empower individuals and organizations with the knowledge and skills needed to defend against evolving cyber threats. We believe that education is the most powerful tool in creating a more secure digital world.</p>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="VHASS Team">
+                </div>
+            </div>
+            
+            <!-- Milestones -->
+            <div class="milestones">
+                <div class="section-title">
+                    <h2 style="color: #000;">Our Milestones</h2>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">2023</div>
+                        <div class="timeline-content">
+                            <h3>Company Founded</h3>
+                            <p>Vhass Softwares Pvt. Ltd. was established with a vision to revolutionize cybersecurity education</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">2024</div>
+                        <div class="timeline-content">
+                            <h3>Division and Segregation</h3>
+                            <p>Empowering secure boundaries through intelligent division and strategic segregation.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">2025</div>
+                        <div class="timeline-content">
+                            <h3>Online Platform Launch</h3>
+                            <p>Introduced comprehensive e-learning platform with interactive labs</p>
+                        </div>
+                  <!--  </div>
+                     <div class="timeline-item">
+                        <div class="timeline-date">2028</div>
+                        <div class="timeline-content">
+                            <h3>Global Recognition</h3>
+                            <p>Awarded "Best Cybersecurity Education Provider" by Global Tech Awards</p>
+                        </div>  -->
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Team Section -->
+            <div class="team-section">
+                <div class="section-title">
+                    <h2 style="color: #000;">Meet Our Leadership</h2>
+                </div>
+                <div class="team-grid">
+                    <div class="team-member">
+                        <img src="images/founder.png" alt="Founder">
+                        <h3>Pagadala Hemanth Krishna Vardhan</h3>
+                        <p class="position">Founder & CEO </p>
+                        <p class="bio">Cybersecurity expert with years of experience in ethical hacking and penetration testing</p>
+                        <div class="social-links">
+                            <a href="https://www.linkedin.com/in/hemanth-krishna-vardhan-pagadala-a796aa339/"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fas fa-globe"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <img src="images/coo.png" alt="Co-Founder">
+                        <h3>Uday Venkat Charkanam</h3>
+                        <p class="position">Ethical Hacker & COO </p>
+                        <p class="bio">Security architect specializing in cloud security and threat intelligence</p>
+                        <div class="social-links">
+                            <a href="https://www.linkedin.com/in/uday-venkat-22274131a/"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-github"></i></a>
+                            <a href="#"><i class="fas fa-globe"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Values Section -->
+            <div class="values-section">
+                <div class="section-title">
+                    <h2 style="color: #000;">Our Core Values</h2>
+                </div>
+                <div class="values-grid">
+                    <div class="value-card">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>Security First</h3>
+                        <p>We prioritize security in everything we do, setting the standard for our students.</p>
+                    </div>
+                    <div class="value-card">
+                        <i class="fas fa-lightbulb"></i>
+                        <h3>Innovation</h3>
+                        <p>We continuously evolve our methods to stay ahead of emerging threats.</p>
+                    </div>
+                    <div class="value-card">
+                        <i class="fas fa-users"></i>
+                        <h3>Community</h3>
+                        <p>We foster a supportive learning community for cybersecurity professionals.</p>
+                    </div>
+                    <div class="value-card">
+                        <i class="fas fa-graduation-cap"></i>
+                        <h3>Excellence</h3>
+                        <p>We maintain the highest standards in our training and certifications.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Testimonials -->
+<div class="testimonials">
+    <div class="container">
+        <div class="section-title">
+            <h2>What Our Students Say</h2>
+        </div>
+        <div class="testimonial-grid">
+            <!-- Testimonial 1 -->
+            <div class="testimonial-card">
+                <div class="video-wrapper">
+                    <video controls poster="images/s1.png">
+                        <source src="videos/s1.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="testimonial-author">
+                    <h4>Himavanth Singh</h4>
+                    <p>SRM AP STUDENT</p>
+                </div>
+            </div>
+
+            <!-- Testimonial 2 -->
+            <div class="testimonial-card">
+                <div class="video-wrapper">
+                    <video controls poster="images/s2.png">
+                        <source src="videos/s2.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="testimonial-author">
+                    <h4>RAGHAVENDRA</h4>
+                    <p>SRM AP STUDENT</p>
+                </div>
+            </div>
+
+            <!-- Testimonial 3 -->
+            <div class="testimonial-card">
+                <div class="video-wrapper">
+                    <video controls poster="images/s3.png">
+                        <source src="videos/s3.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="testimonial-author">
+                    <h4>RISHI</h4>
+                    <p>FREELANCER</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="contain">
+            <div class="footer-content">
+                <div class="footer-main">
+                    <div class="footer-brand">
+                        <img src="images/vhass-logo.png" alt="VHASS Cybersecurity" class="footer-logo">
+                        <p class="footer-description">Empowering the digital world with cutting-edge cybersecurity education and solutions.</p>
+                        <div class="footer-newsletter">
+                            <h5>Subscribe to our newsletter</h5>
+                            <form class="newsletter-form">
+                                <input type="email" placeholder="Your email address" required>
+                                <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-links-container">
+                        <div class="footer-links-col">
+                            <h4 class="footer-title">Quick Links</h4>
+                            <ul class="footer-links">
+                                <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                                <li><a href="courses.html"><i class="fas fa-chevron-right"></i> Courses</a></li>
+                                <li><a href="workshop.html"><i class="fas fa-chevron-right"></i> WorkShop</a></li>
+                                <li><a href="contacts.html"><i class="fas fa-chevron-right"></i> Helpdesk</a></li>
+                                <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                                <li><a href="entre.html"><i class="fas fa-chevron-right"></i> Entrepreneur</a></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="footer-links-col">
+                            <h4 class="footer-title">Courses</h4>
+                            <ul class="footer-links">
+                                <li><a href="des1.html"><i class="fas fa-chevron-right"></i> Ethical Hacking</a></li>
+                                <li><a href="des2.html"><i class="fas fa-chevron-right"></i> Bug Hunting</a></li>
+                                <li><a href="des3.html"><i class="fas fa-chevron-right"></i> Awareness of Cyber Crime And Threats</a></li>
+                                <li><a href="des4.html"><i class="fas fa-chevron-right"></i> Cybersecurity for Teenagers</a></li>
+                                <li><a href="#"><i class="fas fa-chevron-right"></i> Entrepreneurship for Beginners</a></li>
+                                <li><a href="#"><i class="fas fa-chevron-right"></i> ScaleUp Mastery</a></li>
+
+                            </ul>
+                        </div>
+                        
+                        <div class="footer-links-col">
+                            <h4 class="footer-title">Contact Us</h4>
+                            <ul class="footer-contact">
+                                <li><i class="fas fa-map-marker-alt"></i> <span>#2-1-70, Brilliants School Area,<br>Ibrahimpatnam Krishna - 521 456,<br>Andhra Pradesh</span></li>
+                                <li><i class="fas fa-phone"></i> +91 8985320226</li>
+                                <li><i class="fas fa-envelope"></i> info@vhass.in</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-social">
+                    <h5>Follow Us</h5>
+                    <div class="social-links">
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com/company/vhass-softwares-private-limited/" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.instagram.com/vhass_official?igsh=YmxkOWp5b2V2bzVk&utm_source=qr" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-legal">
+                    <p>&copy; 2023  VHASS SOFTWARES PVT. LTD. All rights reserved.</p>
+                    <div class="legal-links">
+                        <a href="terms.html">Privacy Policy</a>
+                        <span>|</span>
+                        <a href="terms.html">Terms of Service</a>
+                        <span>|</span>
+                        <a href="terms.html">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+</body>
+</html>

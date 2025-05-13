@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning With Vhass CyberSecurity</title>
+        <link rel="stylesheet" href="css/style(1).css">
+        <link rel="stylesheet" href="css/responsive.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+    <style>
+        .course-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/ceh-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+        }
+        
+        .course-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        
+        .course-card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .course-highlights {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .highlight-card {
+            flex: 1 1 300px;
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #2c3e50;
+        }
+        
+        .syllabus-section {
+            margin: 40px 0;
+        }
+        
+        .module {
+            margin-bottom: 20px;
+        }
+        
+        .module-title {
+            background: #2c3e50;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .module-content {
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 0 0 5px 5px;
+            display: none;
+        }
+        
+        .module.active .module-content {
+            display: block;
+        }
+        
+        .enroll-section {
+            text-align: center;
+            margin: 50px 0;
+        }
+        
+        .enroll-btn {
+            background: #e74c3c;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .enroll-btn:hover {
+            background: #c0392b;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .testimonial-section {
+            background: #f8f9fa;
+            padding: 40px 20px;
+            margin: 40px 0;
+        }
+        
+        .testimonial {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            font-style: italic;
+        }
+        
+        .faq-section {
+            margin: 40px 0;
+        }
+        
+        .faq-item {
+            margin-bottom: 15px;
+        }
+        
+        .faq-question {
+            background: #2c3e50;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .faq-answer {
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 0 0 5px 5px;
+            display: none;
+        }
+        
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+    </style>
+    <div class="container">
+        <div class="heat">
+            <a href="index.html" class="any">
+                <h1 class="logo"><img src="images/vhass-logo.png" alt="VHASS Cybersecurity" class="header-logo">VHASS</h1>
+        </a>
+            <nav class="navbar">
+                <a href="home.html">Home</a>
+                <a href="courses.html">Courses</a>
+                <a href="contacts.html">Contacts</a>
+                <a href="about.html">About Us</a>
+                <a href="workshop.html">WorkShop</a>
+                <a href="entre.html">Entrepreneur</a>
+            </nav>
+            
+            <div id="userArea" class="user-options"></div>  
+        </div>
+        
+
+<!-- Course Hero Section -->
+<section class="course-hero">
+    <h1>Bug Bounty Hunting</h1>
+    <p>Master cutting-edge security testing methodologies to identify and mitigate complex vulnerabilities in modern systems</p>
+    <p>Industry-Recognized Certification | 20 Hours Training | Real-World Attack Simulations | Expert-Led Instruction</p>
+</section>
+
+<!-- Course Details Section -->
+<div class="course-container">
+    <div class="course-card">
+        <h2>About the Bug Bounty </h2>
+        <p>The Advanced Bug Bounty Hunting Certification is designed for security professionals and ethical hackers who want to go beyond basic vulnerability discovery and master advanced exploitation techniques. This program focuses on offensive security strategies for modern attack surfaces, including cloud platforms, microservices, APIs, and IoT ecosystems — equipping hunters with the skills to identify high-impact bugs in real-world environments.</p>
+        
+        <p>You'll learn advanced exploitation techniques, threat modeling, security automation, and how to conduct comprehensive security assessments that mirror real-world attacker behaviors. The course includes hands-on labs with complex multi-vector attack scenarios and defense bypass techniques.</p>
+        
+        <div class="course-highlights">
+            <div class="highlight-card">
+                <h3><i class="fas fa-shield-alt"></i> Advanced Techniques</h3>
+                <p>Learn sophisticated testing methods beyond standard penetration testing</p>
+            </div>
+            <div class="highlight-card">
+                <h3><i class="fas fa-cloud"></i> Modern Environments</h3>
+                <p>Security testing for cloud, containers, APIs, and hybrid architectures</p>
+            </div>
+            <div class="highlight-card">
+                <h3><i class="fas fa-user-tie"></i> Career Advancement</h3>
+                <p>Prepares you for senior roles like Security Consultant, Red Team Lead, or Security Architect</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Syllabus Section -->
+    <div class="course-card">
+        <h2>Course Syllabus</h2>
+        <p>The Advanced Security Testing course includes 18 comprehensive modules covering the latest security assessment techniques and tools used by elite security teams.</p>
+        
+        <div class="syllabus-section">
+            <div class="module">
+                <div class="module-title">
+                    <span>Module 1:  Introduction to Bug Bounty & Platforms</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="module-content">
+                    <ul>
+                        <li>Why companies offer bug bounties</li>
+                        <li>Types of vulnerabilities rewarded</li>
+                        <li>Risk quantification methodologies</li>
+                        <li>Popular Platforms: HackerOne, Bugcrowd, Synack, Intigriti, YesWeHack</li>
+                        <li>Creating a profile & understanding policies</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="module">
+                <div class="module-title">
+                    <span>Module 2:Reconnaissance & Information Gathering</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="module-content">
+                    <ul>
+                        <li>Target Selection & Scope Analysis</li>
+                        <li>Passive Recon: WHOIS, ASN, Google Dorking</li>
+                        <li>Active Recon: Subdomain Enumeration (Subfinder, Assetfinder, Amass)</li>
+                        <li>IP Range, Port & Service Scanning (Nmap, Naabu)</li>
+                        <li>Tools: Nmap, Subfinder, HTTPx, Gau, JSParser, Waybackurls</li>
+                        <li>Lab Task: Full recon on a demo target</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="module">
+                <div class="module-title">
+                    <span>Module 3: Vulnerability Discovery Techniques</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="module-content">
+                    <ul>
+                        <li>Common Vulnerabilities </li>
+                        <li>Parameter Fuzzing using ffuf, Kiterunner</li>
+                        <li>Testing with Burp Suite (Community/Pro)</li>
+                        <li>Custom wordlists & techniques</li>
+                        <li>XSS,SQL Linjection,IDOR,Clickjacking</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="module">
+                <div class="module-title">
+                    <span>Module 4:Real-World Exploitation & Advanced Techniques</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="module-content">
+                    <ul>
+                        <li>Bypassing WAFs</li>
+                        <li>Business Logic Testing Techniques</li>
+                        <li>Bug chaining and privilege escalation</li>
+                        <li>Chaining Vulnerabilities for Higher Impact</li>
+                        
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="module">
+                <div class="module-title">
+                    <span>Module 5:Reporting & Responsible Disclosure</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="module-content">
+                    <ul>
+                        <li>How to write a professional report</li>
+                        <li>Proof of Concept (PoC) creation (screenshots, videos)</li>
+                        <li>Severity rating (CVSS/CWE)</li>
+                        <li>Client-side security testing</li>
+                        <li>Do's and Don'ts of responsible disclosure</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Additional modules would continue here -->
+            <div class="module">
+                <div class="module-title">
+                    <span>Module 6:Bug Bounty Mindset, Strategy & Career</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="module-content">
+                    <ul>
+                        <li>Choosing the right programs & bugs to hunt</li>
+                        <li>Staying up to date with new techniques</li>
+                        <li>Defense evasion techniques</li>
+                        <li>Lateral movement strategies</li>
+                        <li>Building a reputation & personal branding</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <p class="enroll-section">
+            <button class="enroll-btn">Enroll in Advanced Security Testing</button>
+        </p>
+    </div>
+
+    <!-- Who Should Attend Section -->
+    <div class="course-card">
+        <h2>Who Should Attend</h2>
+        <p>The Advanced Security Testing program is designed for experienced security professionals looking to enhance their skills:</p>
+        <ul>
+            <li>Jr Penetration Testers </li>
+            <li>Security Consultants</li>
+            <li>Red Team Members</li>
+            <li>Application Security Engineers</li>
+         <li>IT professionals with security testing experience</li>
+        </ul>
+        
+        <h3>Prerequisites</h3>
+        <p>To succeed in this advanced course, we recommend:</p>
+        <ul>
+            <li>Laptop Or Pc with i5 processer and 8 GB ram </li>
+            <li>No Basic knowledge required </li>
+            <li>Interest Towards Learning</li>
+        </ul>
+    </div>
+
+    <!-- Testimonials Section -->
+    <div class="testimonial-section">
+        <h2>What Our Students Say</h2>
+        <div class="testimonial">
+            <p>"The Advanced Security Testing course at VHASS took my skills to the next level. The complex cloud attack scenarios and red team exercises were unlike anything I'd experienced in other training programs. I immediately applied these techniques in my consulting work and was able to uncover critical vulnerabilities my previous methods missed."</p>
+            <p><strong>- Priya M., Senior Security Consultant</strong></p>
+        </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="course-card">
+        <h2>Frequently Asked Questions</h2>
+        
+        <div class="faq-section">
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>How does this differ from standard penetration testing courses?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>This program focuses on advanced techniques used in real-world sophisticated attacks, covering modern architectures and defense bypass methods that go beyond standard penetration testing methodologies. We emphasize multi-vector attacks and simulating advanced persistent threats.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>What certification will I receive upon completion?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>You'll receive the VHASS Certified Advanced Security Tester (CAST) certification, recognized by our industry partners. The program also prepares you for advanced vendor-neutral certifications like OSCE and CISSP-ISSAP.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>What's the hands-on component like?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>The course includes 90 hours of hands-on labs featuring complex, multi-stage attack scenarios in our cyber range environment. You'll work with modern enterprise architectures, cloud environments, and sophisticated defensive measures.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Is there a capstone project?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes, the course culminates with a 2-week red team engagement simulation where you'll plan and execute a comprehensive security assessment against a realistic enterprise environment, then present your findings to a panel of security leaders.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>What tools will we use in the course?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>You'll work with industry-standard tools like Burp Suite Pro, BloodHound, Cobalt Strike, and custom tooling, along with developing your own scripts and tools for specialized testing scenarios.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="enroll-section">
+        <h2>Ready to Master Advanced Security Testing?</h2>
+        <button class="enroll-btn">Enroll Now</button>
+        <p>Have questions? <a href="contacts.html">Contact our admissions team</a> for more information.</p>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <img src="images/vhass-logo.png" alt="VHASS Cybersecurity" class="footer-logo">
+                    <p class="footer-description">Empowering the digital world with cutting-edge cybersecurity education and solutions.</p>
+                    <div class="footer-newsletter">
+                        <h5>Subscribe to our newsletter</h5>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="Your email address" required>
+                            <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                        </form>
+                    </div>
+                </div>
+                
+                <div class="footer-links-container">
+                    <div class="footer-links-col">
+                        <h4 class="footer-title">Quick Links</h4>
+                        <ul class="footer-links">
+                            <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                            <li><a href="courses.html"><i class="fas fa-chevron-right"></i> Courses</a></li>
+                            <li><a href="workshop.html"><i class="fas fa-chevron-right"></i> WorkShop</a></li>
+                            <li><a href="contacts.html"><i class="fas fa-chevron-right"></i> Helpdesk</a></li>
+                            <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                            <li><a href="entre.html"><i class="fas fa-chevron-right"></i> Entrepreneur</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-links-col">
+                        <h4 class="footer-title">Courses</h4>
+                        <ul class="footer-links">
+                            <li><a href="des1.html"><i class="fas fa-chevron-right"></i> Ethical Hacking</a></li>
+                            <li><a href="des2.html"><i class="fas fa-chevron-right"></i> Bug Hunting</a></li>
+                            <li><a href="des3.html"><i class="fas fa-chevron-right"></i> Awareness of Cyber Crime And Threats</a></li>
+                            <li><a href="des4.html"><i class="fas fa-chevron-right"></i> Cybersecurity for Teenagers</a></li>
+                            <li><a href="#"><i class="fas fa-chevron-right"></i> Entrepreneurship for Beginners</a></li>
+                            <li><a href="#"><i class="fas fa-chevron-right"></i> ScaleUp Mastery</a></li>
+
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-links-col">
+                        <h4 class="footer-title">Contact Us</h4>
+                        <ul class="footer-contact">
+                            <li><i class="fas fa-map-marker-alt"></i> <span>#2-1-70, Brilliants School Area,<br>Ibrahimpatnam Krishna - 521 456,<br>Andhra Pradesh</span></li>
+                            <li><i class="fas fa-phone"></i> +91 8985320226</li>
+                            <li><i class="fas fa-envelope"></i> info@vhass.in</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-social">
+                <h5>Follow Us</h5>
+                <div class="social-links">
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.linkedin.com/company/vhass-softwares-private-limited/" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.instagram.com/vhass_official?igsh=YmxkOWp5b2V2bzVk&utm_source=qr" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="footer-legal">
+                <p>&copy; 2023  VHASS SOFTWARES PVT. LTD. All rights reserved.</p>
+                <div class="legal-links">
+                    <a href="terms.html">Privacy Policy</a>
+                    <span>|</span>
+                    <a href="terms.html">Terms of Service</a>
+                    <span>|</span>
+                    <a href="terms.html">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
